@@ -19,8 +19,12 @@ from django.conf.urls import url
 
 from blog import views
 from promotion import views
+from membre import views
+from typeMembre import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url('promotion/', views.index, name="promotion"),
+    url('membre/', views.index, name="membre"),
+    url('typeMembre/', views.index, name="typeMembre"),
 ]

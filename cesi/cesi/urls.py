@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
+
 from blog import views
+from promotion import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('blog/', views.index, name="index"),
+    url('promotion/', views.index, name="promotion"),
 ]

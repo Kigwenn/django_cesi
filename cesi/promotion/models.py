@@ -1,26 +1,28 @@
-from django.db import models
+
 
 # Create your models here.
 
-class Etudiant(models.Model):
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField()
+# class Etudiant(models.Model):
+#     first_name = models.CharField(max_length=30)
+#     last_name = models.CharField(max_length=30)
+#     email = models.EmailField()
+#
+#     def __str__(self):
+#         return "%s %s" % (self.first_name, self.last_name)
+from django.db import models
 
-    def __str__(self):
-        return "%s %s" % (self.first_name, self.last_name)
-
-class Promotions(models.Model):
-    promotion = models.TextField()
+class Promotion(models.Model):
+    nom = models.TextField()
     libelle = models.TextField()
-    annees_debut = models.TextField()
-    annees_fin = models.TextField()
-    <etudiants> = models.ForeignKey(<Etudiant>, on_delete=models.CASCADE)
+    annee_debut = models.DateTimeField()
+    annee_fin = models.DateTimeField()
+    # <etudiants> = models.ForeignKey(<Etudiant>, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.promotion
+    object = models.Manager()
+    def __unicode__(self):
+        return self.nom
 
-    class Meta:
-        ordering = ['promotion']
+    # class Meta:
+    #     ordering = ['promotion']
 
 

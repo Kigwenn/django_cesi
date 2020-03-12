@@ -12,17 +12,18 @@
 from django.db import models
 
 class Promotion(models.Model):
+
+    object = models.Manager()
+
     nom = models.TextField()
     libelle = models.TextField()
     annee_debut = models.DateTimeField()
     annee_fin = models.DateTimeField()
-    # <etudiants> = models.ForeignKey(<Etudiant>, on_delete=models.CASCADE)
 
-    object = models.Manager()
-    def __unicode__(self):
+    # membre = models.OneToOneField('membre.Membre', on_delete = models.CASCADE, related_name='_')
+
+    def __str__(self):
         return self.nom
 
     # class Meta:
-    #     ordering = ['promotion']
-
-
+        ordering = ['nom']

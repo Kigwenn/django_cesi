@@ -32,14 +32,7 @@ def modify(request):
     membre_id = request.GET.get('id')[0]
     membre = Membre.object.all()
     print(membre)
-    request("nom") = membre.nom
-    membre.prenom = request.set("prenom")
-    membre.adresse = request.POST.get("adresse")
-    membre.cp = request.POST.get("cp")
-    membre.tel = request.POST.get("code_postal")
-    membre.date_naissance = request.POST.get("date_naissance_0")
-    membre.date_entre = request.POST.get("date_entre_0")
-    membre.date_sortie = request.POST.get("date_sortie_0")
+
 
     if request.method == 'PUT':
         membre.nom = request.POST.get("nom")

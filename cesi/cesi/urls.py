@@ -13,10 +13,12 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('publication/', include('publication.urls'))
 """
+from . import settings
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from publication import views as puviews
 from promotion import views as pviews
 from membre import views as mviews
@@ -34,6 +36,9 @@ urlpatterns = [
     url('membre/add/', mviews.add, name="membreAdd"),
     url('membre/modify/', mviews.modify, name="membreModify"),
     url('membre/', mviews.index, name="membre"),
+    url('membreTrombi', mviews.trombi, name="membreTrombi"),
+    url('index', mviews.home, name="index"),
+
 
     url('typeMembre/add/', tmviews.add, name="typeMembreAdd"),
     url('typeMembre/modify/', tmviews.modify, name="typeMembreModify"),
@@ -47,3 +52,6 @@ urlpatterns = [
     # url('trombinoscope/modify/', tviews.modify, name="trombinoscopeModify"),
     # url('trombinoscope/', tviews.index, name="trombinoscope"),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

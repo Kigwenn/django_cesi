@@ -7,14 +7,14 @@ from django.http import HttpResponse
 def index(request):
     publication_list = Publication.object.all()
 
-    return render(request, "index.html", {'publication_list': publication_list})
+    return render(request, "publication.html", {'publication_list': publication_list})
 
 def add(request):
     publication_list = Publication.object.all()
 
-    return render(request, "index.html", {'publication_list': publication_list})
+    return render(request, "publication.html", {'publication_list': publication_list})
 
 def modify(request):
     publication_list = Publication.object.all()
 
-    return render(request, "index.html", {'publication_list': publication_list})
+    return render(request, "publication.html", {'publication_list': publication_list})

@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% for post in publication_list %}
-        <h2>{{ publication.titre}}</h2>
-        {{ publication.date_pub}}
-        <p>{{ publication.publication}}</p>
+{% extends "base.html" %}
+
+{% block title %}Publications{% endblock %}
+
+{% block content %}
+    <div class="block-header">
+        <h2>PUBLICATIONS</h2>
+    </div>
+    {% for publication in publication_list %}
+        <a href=""></a><div class="card"></a>
+             <div class="header">
+                <h2>{{ publication.titre }}</h2>
+                 <br>
+                <p>{{ publication.publication }}</p>
+                 <p><b>Date de publication : </b>  {{ publication.date_pub }}</p>
+             </div>
+        </div>
     {% endfor%}
-</body>
-</html>
+{% endblock %}

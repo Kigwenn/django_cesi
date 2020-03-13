@@ -4,7 +4,7 @@
 
 {% block content %}
     <div class="block-header">
-        <h2>LISTE DES PROMOTIONS</h2>
+        <h2>LISTE DES FORMATIONS</h2>
     </div>
     {% for promotion in promotion_list %}
         <a href=""></a><div class="card"></a>
@@ -13,8 +13,8 @@
                 <p>{{ promotion.libelle }}</p>
                  <p><b>Début : </b>  {{ promotion.yearStart }}</p>
                  <p><b>Fin : </b>{{ promotion.yearEnd }}</p>
-                 <a href=""><button type="button" class="btn btn-primary m-t-15 waves-effect">Elèves</button></a>
-                 <a href=""><button type="button" class="btn btn-primary m-t-15 waves-effect">Trombinoscope</button></a>
+                 <a href="/membre/?promo_id={{ promotion.id }}"><button type="button" class="btn btn-primary m-t-15 waves-effect">Elèves</button></a>
+                 <a href="/membreTrombi/?promo_id={{ promotion.id }}"><button type="button" class="btn btn-primary m-t-15 waves-effect">Trombinoscope</button></a>
              </div>
         </div>
     {% endfor%}

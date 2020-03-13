@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    {% for post in publication_list %}
-        <h2>{{ publication.titre}}</h2>
-        {{ publication.date_pub}}
-        <p>{{ publication.publication}}</p>
-    {% endfor%}
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Bienvenue!{% endblock %}
+
+{% block content %}
+    <div class="block-header">
+        <h1>Bienvenue !</h1>
+    </div>
+     <h2>Bienvenue sur l'ENT!</h2>
+{% endblock %}

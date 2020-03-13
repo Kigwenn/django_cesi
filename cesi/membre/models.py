@@ -11,6 +11,7 @@ class Membre(models.Model):
     adresse = models.TextField()
     cp = models.TextField()
     tel = models.TextField()
+    img = models.ImageField(upload_to='users/')
     date_naissance = models.DateTimeField()
     date_entre = models.DateTimeField()
     date_sortie = models.DateTimeField()

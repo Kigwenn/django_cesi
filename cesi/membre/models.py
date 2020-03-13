@@ -6,15 +6,15 @@ from django.db import models
 class Membre(models.Model):
     object = models.Manager()
 
-    nom = models.TextField()
-    prenom = models.TextField()
-    adresse = models.TextField()
-    cp = models.TextField()
-    tel = models.TextField()
+    nom = models.TextField(null=True)
+    prenom = models.TextField(null=True)
+    adresse = models.TextField(null=True)
+    cp = models.TextField(null=True)
+    tel = models.TextField(null=True)
+    date_naissance = models.DateTimeField(null=True)
+    date_entre = models.DateTimeField(null=True)
+    date_sortie = models.DateTimeField(null=True)
     img = models.ImageField(upload_to='users/')
-    date_naissance = models.DateTimeField()
-    date_entre = models.DateTimeField()
-    date_sortie = models.DateTimeField()
 
     promotion = models.ForeignKey('promotion.Promotion', on_delete=models.CASCADE, null=True)
     # typeMembre = models.OneToOneField('typeMembre.TypeMembre', on_delete = models.CASCADE, related_name='+')

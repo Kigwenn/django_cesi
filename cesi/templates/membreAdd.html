@@ -1,1 +1,79 @@
-Ajouter un membre
+{% extends "base.html" %}
+
+{% block title %}Membre{% endblock %}
+
+{% block content %}
+    <h1> Ajouter membre </h1>
+    <br>
+            <form class="col-lg-offset-4 col-lg-4" action="" method="post" id="membre_form" novalidate=""><input type="hidden" name="csrfmiddlewaretoken" value="oPBzw2loYITOWBEVnIbQFgQryMBwEpAFCS3ArTHsoHpEnhaoBlRq2Q6C4oe6PJQo">
+
+                <div class="form-group">
+                    <label for="id_nom">Nom</label>
+                    <input type="text" name="nom" class="form-control" id="id_nom">
+                </div>
+                <div class="form-group">
+                    <label for="id_prenom">Prénom</label>
+                    <input type="text" name="prenom" class="form-control" id="id_prenom">
+                </div>
+                <div class="form-group">
+                    <label for="id_adresse">Adresse</label>
+                    <input type="text" name="adresse" class="form-control" id="id_adresse">
+                </div>
+                <div class="form-group">
+                    <label for="id_cp">Code postal</label>
+                    <input type="text" name="cp" class="form-control" id="id_cp">
+                </div>
+                <div class="form-group">
+                    <label for="id_tel">Téléphone</label>
+                    <input type="text" name="telephone" class="form-control" id="id_tel">
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-4">
+                                <label for="id_date_naissance_0">Date de naissance</label>
+                                <input type="date" name="date_naissance_0" class="id_date_naissance_0" id="id_date_naissance_0">
+                        </div>
+                         <div class="col-md-4">
+                                <label for="date_naissance_1">Date de naissance</label>
+                                <input type="text" name="date_naissance_1" class="date_naissance_1" id="date_naissance_1">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div>
+                            <div class="col-md-4">
+                                    <label for="date_entre_0">Date d'entré</label>
+                                    <input type="date" name="date_entre_0" class="date_entre_0" id="date_entre_0">
+                            </div>
+                             <div class="col-md-4">
+                                    <label for="date_entre_1">heure d'entré</label>
+                                    <input type="text" name="date_entre_1" class="date_entre_1" id="date_entre_1">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4">
+                                    <label for="date_sortie_0">Date de sortie</label>
+                                    <input type="date" name="date_sortie_0" class="date_sortie_0" id="date_sortie_0">
+                            </div>
+                             <div class="col-md-4">
+                                    <label for="date_sortie_1">heure de sortie</label>
+                                    <input type="text" name="date_sortie_1" class="date_sortie_1" id="date_sortie_1">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <br>
+        <div class="text-center">
+            <input type="submit" value="Enregistrer" class="btn btn-primary" name="_save">
+        </div>
+    </div>
+</form>
+{% endblock %}

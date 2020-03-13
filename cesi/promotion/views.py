@@ -8,3 +8,13 @@ def index(request):
     promotion_list = Promotion.object.all()
 
     return render(request, "promotion.html", {'promotion_list': promotion_list})
+
+def add(request):
+    promotion_list = Promotion.object.all()
+
+    return render(request, "promotionAdd.html", {'promotion_list': promotion_list})
+
+def modify(request):
+    promotion_list = Promotion.object.all()
+
+    return render(request, "promotionModify.html", {'promotion_list': promotion_list})

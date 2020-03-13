@@ -1,0 +1,6 @@
+Liste des promotions
+{% for promotion in promotion_list %}
+    <h2>{{ promotion.nom }}</h2>
+<!--    {{ post.author }} le {{ post.pub_date }}-->
+    <p>{{ promotion.libelle }}</p>
+{% endfor%}

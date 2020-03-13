@@ -11,20 +11,39 @@ Class-based views
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+    2. Add a URL to urlpatterns:  path('publication/', include('publication.urls'))
 """
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
 
-from blog import views
-from promotion import views
-from membre import views
-from typeMembre import views
+from publication import views as puviews
+from promotion import views as pviews
+from membre import views as mviews
+from typeMembre import views as tmviews
+# from trombinoscope import views as tviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url('promotion/', views.index, name="promotion"),
-    url('membre/', views.index, name="membre"),
-    url('typeMembre/', views.index, name="typeMembre"),
+    path('/', admin.site.urls),
+
+    url('promotion/add/', pviews.add, name="promotionAdd"),
+    url('promotion/modify/', pviews.modify, name="promotionModify"),
+    url('promotion/', pviews.index, name="promotion"),
+
+    url('membre/add/', mviews.add, name="membreAdd"),
+    url('membre/modify/', mviews.modify, name="membreModify"),
+    url('membre/', mviews.index, name="membre"),
+
+    url('typeMembre/add/', tmviews.add, name="typeMembreAdd"),
+    url('typeMembre/modify/', tmviews.modify, name="typeMembreModify"),
+    url('typeMembre/', tmviews.index, name="typeMembre"),
+
+    url('publication/add/', puviews.add, name="publicationAdd"),
+    url('publication/modify/', puviews.modify, name="publicationModify"),
+    url('publication/', puviews.index, name="publication"),
+
+    # url('trombinoscope/add/', tviews.add, name="trombinoscopeAdd"),
+    # url('trombinoscope/modify/', tviews.modify, name="trombinoscopeModify"),
+    # url('trombinoscope/', tviews.index, name="trombinoscope"),
 ]

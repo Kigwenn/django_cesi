@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Elèves{% endblock %}
+
+{% block content %}
+    <div class="block-header">
+        <h2>LISTE DES PROMOTIONS</h2>
+    </div>
+    {% for promotion in promotion_list %}
+        <a href=""></a><div class="card"></a>
+             <div class="header">
+                <h2>{{ promotion.nom }}</h2>
+                <p>{{ promotion.libelle }}</p>
+                 <p><b>Début : </b>  {{ promotion.yearStart }}</p>
+                 <p><b>Fin : </b>{{ promotion.yearEnd }}</p>
+                 <a href=""><button type="button" class="btn btn-primary m-t-15 waves-effect">Elèves</button></a>
+                 <a href=""><button type="button" class="btn btn-primary m-t-15 waves-effect">Trombinoscope</button></a>
+             </div>
+        </div>
+    {% endfor%}
+{% endblock %}

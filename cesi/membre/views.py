@@ -8,3 +8,13 @@ def index(request):
     membre_list = Membre.object.all()
 
     return render(request, "membre.html", {'membre_list': membre_list})
+
+def add(request):
+    membre_list = Membre.object.all()
+
+    return render(request, "membreAdd.html")
+
+def modify(request):
+    membre_list = Membre.object.all()
+
+    return render(request, "membreModify.html")

@@ -20,26 +20,42 @@
               <th>date entre</th>
               <th>date sortie</th>
               <th>promo id</th>
+              <th class="text-center">actions</th>
             </tr>
             </thead>
             <tbody>
 
-            {% for membre in membre_list %}
-            <tr>
-              <td>{{ membre.nom }}</td>
-              <td>{{ membre.prenom }}</td>
-              <td>{{ membre.adrresse }}</td>
-              <td>{{ membre.cp }}</td>
-              <td>{{ membre.tel }}</td>
-              <td>{{ membre.naissance }}</td>
-              <td>{{ membre.date_entre }}</td>
-              <td>{{ membre.date_sortie }}</td>
-              <td>{{ membre.promotion_id }}</td>
-            </tr>
-            {% endfor%}
+              {% for membre in membre_list %}
+              <tr>
+                <td  style="padding-top: 20px">{{ membre.nom }}</td>
+                <td  style="padding-top: 20px">{{ membre.prenom }}</td>
+                <td  style="padding-top: 20px">{{ membre.adrresse }}</td>
+                <td  style="padding-top: 20px">{{ membre.cp }}</td>
+                <td  style="padding-top: 20px">{{ membre.tel }}</td>
+                <td  style="padding-top: 20px">{{ membre.date_naissance }}</td>
+                <td  style="padding-top: 20px">{{ membre.date_entre }}</td>
+                <td  style="padding-top: 20px">{{ membre.date_sortie }}</td>
+                <td  style="padding-top: 20px">{{ membre.promotion_id }}</td>
+                <td>
+                  <p>
+                    <a href="/membre/modify/?id={{ membre.id }}" class="btn btn-primary active">
+                      <i class="fa fa-edit" aria-hidden="true"></i> modifier
+                    </a>
+                    <a href="/membre/?id={{ membre.id }}" class="btn btn-danger active">
+                      <i class="fa fa-trash" aria-hidden="true"></i> Supprimer
+                    </a>
+                  </p>
+                </td>
+              </tr>
+              {% endfor%}
 
             </tbody>
           </table>
         </div>
       </div>
+      <p class="text-center">
+        <a href="/membre/add/" class="btn btn-success active">
+          <i class="fa fa-edit" aria-hidden="true"></i> Ajouter un membre
+        </a>
+      </p>
 {% endblock %}
